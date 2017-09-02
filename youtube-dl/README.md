@@ -12,9 +12,12 @@ Container info:
 
 ## Usage
 
-To use, run the following command:
+Build the image
+`docker build -t my-youtube-dl .`
+
+To use,
 ```
-docker run -it --rm -v "$(pwd):/src" janikarh/youtube-dl:latest \
+docker run -it --rm -v "$(pwd):/src" my-youtube-dl \
     -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]' \
     -o '/src/%(title)s.mp4' --restrict-filenames \
     https://www.youtube.com/watch?v=[video_id]
