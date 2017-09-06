@@ -148,4 +148,3 @@ target/
 .env
 pyrunner/
 venv/
-*.conf
