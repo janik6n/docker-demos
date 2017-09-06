@@ -34,17 +34,16 @@ Since we are using Neo4j version 3.2.x, we need to add a line to the conf. From 
 Now that all prerequisites are in order, it's time to run the container. With the options set as below, 
 
 - the container is run as daemon,
-- no authentication is required (we could require it by using `--env NEO4J_AUTH=neo4j/<password>`
+- no authentication is required (we could set/require it by using `--env NEO4J_AUTH=neo4j/<password>`
  instead)
 - data will be stored in `data`,
 - logs will be written to `logs`,
 - conf will be used from `conf`,
-- plugins will be included and run from `plugins`
-**on the host** for persistence.
+- plugins will be included and run from `plugins`.
 
 `docker run -d --publish=7474:7474 --publish=7687:7687 --volume=$(pwd)/data:/data --volume=$(pwd)/logs:/logs --volume=$(pwd)/conf:/conf --volume=$(pwd)/plugins:/plugins --env=NEO4J_AUTH=none --name my_neo4j neo4j:3.2.3`
 
-So, with the container running -- we can check the status with `docker ps -a` -- it's time to open a web browser and head to `http://localhost:7474/browser/`. Should all have gone well, we should see Neo4j's web GUI.
+So, with the container running -- we can check the status with `docker ps -a` -- it's time to open a web browser and head to <http://localhost:7474/browser/>. Should all have gone well, we should see Neo4j's web GUI.
 
 We can verify that the plugin have loaded correctly by querying
 
