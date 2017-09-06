@@ -16,10 +16,10 @@ mkdir plugins
 ## Get the initial config
 
 We will need to add new parameter to `neo4j.conf`, so first we need to get our hands on the file as it is now. Luckily we can dump it from the container:
-`docker run --rm --volume=$(pwd)/conf:/conf neo4j:3.2.3 dump-config`
-... which will "download" the conf to *current host directory*.
 
-Move the file to directory `conf`.
+`docker run --rm --volume=$(pwd)/conf:/conf neo4j:3.2.3 dump-config`
+
+... which will "download" the configuration file to *conf directory under current host directory*.
 
 ## Download the plugin
 
@@ -47,11 +47,13 @@ Now that all prerequisites are in order, it's time to run the container. With th
 So, with the container running -- we can check the status with `docker ps -a` -- it's time to open a web browser and head to `http://localhost:7474/browser/`. Should all have gone well, we should see Neo4j's web GUI.
 
 We can verify that the plugin have loaded correctly by querying
+
 ```CALL dbms.procedures() YIELD name, description, signature
 WHERE name STARTS WITH "algo."
 RETURN name, description, signature
 ORDER BY name
 ```
+
 ... which should list the algorithm procedures.
 
 ## Follow the original blog post
