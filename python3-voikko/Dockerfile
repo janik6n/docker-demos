@@ -19,4 +19,4 @@ RUN cp /lib/python3/dist-packages/libvoikko.py /usr/src/app/libvoikko.py
 COPY app.py ./
 
 ENTRYPOINT ["python", "./app.py"]
-CMD ["./app.py"]
+CMD ["autossa"]
