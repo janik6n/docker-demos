@@ -1,0 +1,13 @@
+jupyter
+ipywidgets
+numpy
+pandas
+xlrd
+lxml
+matplotlib
+seaborn
+pandas-highcharts
+ipysankeywidget
+calmap
+requests
+beautifulsoup4
