@@ -12,6 +12,6 @@ RUN apk update --repository $EDGE_REPOSITORY \
 	&& apk add ffmpeg --repository $EDGE_REPOSITORY \
 	&& rm -rf /var/cache/apk/*
 
-RUN pip install --upgrade youtube-dl==2017.08.23
+RUN pip install --upgrade youtube-dl
 
 ENTRYPOINT ["youtube-dl"]
