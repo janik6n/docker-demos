@@ -18,7 +18,7 @@ Stop the container
 
 Note:
 This image is in Docker Hub. You can run it from there with Jupyter notebooks on the *current directory*:
-docker run -d -p 8888:8888 -v "$(pwd)":/opt/notebook -v /local/path/to/_dev_certificates:/certs --name jupyters janikarh/alpine-jupyter:1.5tls
+`docker run -d -p 8888:8888 -v "$(pwd)":/opt/notebook -v /local/path/to/_dev_certificates:/certs --name jupyters janikarh/alpine-jupyter:1.5tls`
 
 
 Links:
